@@ -1,11 +1,8 @@
 package application;
 
-public class Convert {
+public class Convert extends Rates {
 	
 	private double toConvert;
-	private String fromCurrency;
-	private String toCurrency;
-	private double converted;
 	
 	public double getToConvert() {
 		return toConvert;
@@ -14,31 +11,24 @@ public class Convert {
 	public void setToConvert(double toConvert) {
 		this.toConvert = toConvert;
 	}
-	
-	public String getCurrency() {
-		return fromCurrency;
-	}
-	
-	public void setCurrency(String currency) {
-		this.fromCurrency = currency;
-	}
-	
-	public double getConverted() {
-		return converted;
-	}
-	
-	public String getNewCurrency() {
-		return toCurrency;
-	}
 
-	public void setNewCurrency(String newCurrency) {
-		this.toCurrency = newCurrency;
+	public double getConverted() {
+		return Calculate();
 	}
 	
 	public Convert(double valueToConvert, String oldCurrency, String newCurrency) {
+		super(oldCurrency, newCurrency);
 		toConvert = valueToConvert;
-		fromCurrency = new String(oldCurrency);
-		toCurrency = new String (newCurrency);
+	}
+	
+	private Double Calculate() {
+		return toConvert * this.getRate();
+	}
+	
+	@Override
+	public String toString() {
+		return "Converted " + getToConvert() + " " + this.getFromCurrency() +
+				" to " + getConverted() + " " + this.getToCurrency();
 	}
 
 }
