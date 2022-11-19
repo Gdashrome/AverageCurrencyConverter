@@ -16,13 +16,18 @@ public class Convert extends Rates {
 		return Calculate();
 	}
 	
-	public Convert(double valueToConvert, String oldCurrency, String newCurrency) {
+	public Convert(String valueToConvert, String oldCurrency, String newCurrency) throws InvalidCurrencyException {
 		super(oldCurrency, newCurrency);
-		toConvert = valueToConvert;
+		try {
+			toConvert = Double.parseDouble(valueToConvert);
+		}catch (NumberFormatException nfe) {
+			throw new InvalidCurrencyException("Do not include characters: " + valueToConvert 
+					+ "Value to convert should be a number");
+		}
 	}
 	
 	private Double Calculate() {
-		return toConvert * this.getRate();
+		return (toConvert * this.getRate());
 	}
 	
 	@Override
