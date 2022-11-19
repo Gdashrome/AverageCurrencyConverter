@@ -15,7 +15,7 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			VBox root = loader.load(new FileInputStream("src/application/wordlGUI.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,1280,720);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
