@@ -21,8 +21,8 @@ public class Convert extends Rates {
 		try {
 			toConvert = Double.parseDouble(valueToConvert);
 		}catch (NumberFormatException nfe) {
-			throw new InvalidCurrencyException("Do not include characters: " + valueToConvert 
-					+ "Value to convert should be a number");
+			throw new InvalidCurrencyException("Do not include characters: '" + valueToConvert 
+					+ "'. Value to convert should be a number");
 		}
 	}
 	
@@ -32,8 +32,8 @@ public class Convert extends Rates {
 	
 	@Override
 	public String toString() {
-		return "Converted " + getToConvert() + " " + this.getFromCurrency() +
-				" to " + getConverted() + " " + this.getToCurrency();
+		return " Converted:           " + getToConvert() + " " + this.getFromCurrency() +
+				"      =      " + getConverted() + " " + this.getToCurrency();
 	}
 
 }
