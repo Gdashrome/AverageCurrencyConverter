@@ -150,7 +150,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="312.0" prefHeight="134.0" prefWidth="600.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Fun Fact" textFill="#00a13e">
+                        <Button mnemonicParsing="false" onAction="#funFact" text="Fun Fact" textFill="#00a13e">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -158,7 +158,7 @@
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Multiple Converts" textFill="#00044a">
+                        <Button mnemonicParsing="false" onAction="#multipleConverts" text="Multiple Converts" textFill="#00044a">
                            <font>
                               <Font name="System Bold Italic" size="15.0" />
                            </font>
