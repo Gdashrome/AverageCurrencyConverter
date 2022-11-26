@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+      <VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.CurrencyController">
+         <children>
+            <HBox prefHeight="68.0" prefWidth="400.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="112.0" text="Fun Facts" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Label prefHeight="20.0" prefWidth="290.0" text="Press to generate a fun fact from our currencies">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="71.0" text="Press" textFill="#4dcd41" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#e1dfdf" />
+               </light>
+            </Lighting>
+         </effect>
+      </VBox>
+   
+
