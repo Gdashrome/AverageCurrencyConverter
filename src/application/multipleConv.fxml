@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections ?>
+
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CurrencyController">
+         <children>
+            <HBox prefHeight="68.0" prefWidth="400.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="202.0" text="Multiple Conversions" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+                             
+	</HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="239.0" text="Select the currency you want to convert" textFill="#514f4f">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox prefWidth="150.0" />
+            	<items>
+                	<FXCollections fx:factory="observableArrayList">
+                    	<String fx:value="US Dollar (USD)" />
+                        <String fx:value="Euro (EUR)" />
+                        <String fx:value="Japanese Yen (JPY)" />
+                        <String fx:value="Pound Sterling (GBP)" />
+                        <String fx:value="Australian Dollar (AUD)" />
+                        <String fx:value="Canadian Dollar (CAD)" />
+                        <String fx:value="Swiss Franc (CHF)" />
+                        <String fx:value="Chinese Renminbi (CNH)" />
+                        <String fx:value="Hong Kong Dollar (HKD)" />
+                        <String fx:value="New Zealand Dollar (NZD)" />
+                     </FXCollections>
+                </items>
+            
+         </children>
+      </HBox>
+    </children>
+    </VBox>

@@ -15,8 +15,10 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			VBox root = loader.load(new FileInputStream("src/application/wordlGUI.fxml"));
+			CurrencyController controller = (CurrencyController)loader.getController();
+			controller.applicationStage = primaryStage;
+		
 			Scene scene = new Scene(root,1280,720);
-			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Currency Converter");
