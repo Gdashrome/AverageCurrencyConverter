@@ -17,9 +17,13 @@ public class Rates{
 		return toCurrency;
 	}
 	
-	public Rates(String oldCurrency, String newCurrency) {
-		fromCurrency = new String(oldCurrency.substring(oldCurrency.indexOf('(') + 1, oldCurrency.indexOf(')')));
-		toCurrency = new String(newCurrency.substring(newCurrency.indexOf('(') + 1, newCurrency.indexOf(')')));
+	public Rates(String oldCurrency, String newCurrency) throws InvalidCurrencyException {
+		try {
+			fromCurrency = new String(oldCurrency.substring(oldCurrency.indexOf('(') + 1, oldCurrency.indexOf(')')));
+			toCurrency = new String(newCurrency.substring(newCurrency.indexOf('(') + 1, newCurrency.indexOf(')')));
+		}catch (NullPointerException npe) {
+			throw new InvalidCurrencyException("Please put a new currency to convert the given value to");
+		}
 	}
 	
 	double chooseRate() {
@@ -45,7 +49,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.9485;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 8.2824;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -76,7 +80,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.6571;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 7.0422;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -107,7 +111,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.646;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 6.9922;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -138,7 +142,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.5765;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 6.695;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -169,7 +173,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.2168;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 5.17;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -201,7 +205,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 1.0971;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 4.663;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -232,7 +236,7 @@ public class Rates{
 			else if (getToCurrency().equals("AUD")) {
 				rate = 0.9118;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 4.2514;
 			}
 			else if (getToCurrency().equals("HKD")) {
@@ -244,7 +248,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("CNY")) {
+		else if (getFromCurrency().equals("CNH")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.1208;
 			}
@@ -297,7 +301,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 0.2012;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 0.8544;
 			}
 			else if (getToCurrency().equals("JPY")) {
@@ -328,7 +332,7 @@ public class Rates{
 			else if (getToCurrency().equals("NZD")) {
 				rate = 0.0121;
 			}
-			else if (getToCurrency().equals("CNY")) {
+			else if (getToCurrency().equals("CNH")) {
 				rate = 0.0514;
 			}
 			else if (getToCurrency().equals("HKD")) {

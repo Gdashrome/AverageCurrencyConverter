@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
@@ -11,48 +10,244 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections ?>
 
-<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CurrencyController">
-         <children>
-            <HBox prefHeight="68.0" prefWidth="400.0">
+<VBox prefHeight="733.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MultiCurrencyController">
+   <children>
+      <BorderPane prefHeight="554.0" prefWidth="800.0">
+         <center>
+            <VBox prefHeight="470.0" prefWidth="900.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="202.0" text="Multiple Conversions" textAlignment="JUSTIFY">
+                  <Label text="Average 2022 Currency Convertor" textFill="#000a4a">
                      <font>
-                        <Font name="System Bold" size="19.0" />
+                        <Font name="System Bold" size="30.0" />
                      </font>
-                     <effect>
-                        <Blend />
-                     </effect>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
                   </Label>
+                  <Label text="Top 10 Most Traded Currencies According to IG Group " textFill="#002659">
+                     <font>
+                        <Font name="Georgia" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="68.0" prefWidth="628.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="111.0" text="Currency:" textFill="#721414">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="179.0">
+                           <children>
+                           
+                                    <TextField fx:id="amountTextField" prefHeight="41.0" prefWidth="207.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              
+                              
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <ChoiceBox fx:id="fromConvertChoiceBox" prefHeight="51.0" prefWidth="177.0">
+                           <HBox.margin>
+                              <Insets bottom="8.0" left="50.0" right="10.0" top="9.0" />
+                           </HBox.margin>
+                           <items>
+                        		<FXCollections fx:factory="observableArrayList">
+                        			<String fx:value="US Dollar (USD)" />
+                        			<String fx:value="Euro (EUR)" />
+                        			<String fx:value="Japanese Yen (JPY)" />
+                        			<String fx:value="Pound Sterling (GBP)" />
+                        			<String fx:value="Australian Dollar (AUD)" />
+                        			<String fx:value="Canadian Dollar (CAD)" />
+                        			<String fx:value="Swiss Franc (CHF)" />
+                        			<String fx:value="Chinese Renminbi (CNH)" />
+                        			<String fx:value="Hong Kong Dollar (HKD)" />
+                        			<String fx:value="New Zealand Dollar (NZD)" />
+                        		</FXCollections>
+                        	</items>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="5.0" prefWidth="689.0">
+                     <children>
+                        
+                              
+                        <Label fx:id="amountErrorLabel" prefHeight="31.0" prefWidth="590.0" text="" textFill="RED">
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Georgia" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="39.0" prefWidth="689.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="25.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="toConvertChoiceBox" prefHeight="10.0" prefWidth="181.0">
+                        	<HBox.margin>
+                              <Insets left="15.0" right="10.0" top="20.0" />
+                        	</HBox.margin>
+                        	<items>
+                        		<FXCollections fx:factory="observableArrayList">
+                        			<String fx:value="US Dollar (USD)" />
+                        			<String fx:value="Euro (EUR)" />
+                        			<String fx:value="Japanese Yen (JPY)" />
+                        			<String fx:value="Pound Sterling (GBP)" />
+                        			<String fx:value="Australian Dollar (AUD)" />
+                        			<String fx:value="Canadian Dollar (CAD)" />
+                        			<String fx:value="Swiss Franc (CHF)" />
+                        			<String fx:value="Chinese Renminbi (CNH)" />
+                        			<String fx:value="Hong Kong Dollar (HKD)" />
+                        			<String fx:value="New Zealand Dollar (NZD)" />
+                        		</FXCollections>
+                        	</items>
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </ChoiceBox>
+                        <Label layoutX="10.0" layoutY="35.0" prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <ChoiceBox fx:id="toConvertChoiceBox2" layoutX="140.0" layoutY="30.0" prefHeight="10.0" prefWidth="181.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="US Dollar (USD)" />
+                                 <String fx:value="Euro (EUR)" />
+                                 <String fx:value="Japanese Yen (JPY)" />
+                                 <String fx:value="Pound Sterling (GBP)" />
+                                 <String fx:value="Australian Dollar (AUD)" />
+                                 <String fx:value="Canadian Dollar (CAD)" />
+                                 <String fx:value="Swiss Franc (CHF)" />
+                                 <String fx:value="Chinese Renminbi (CNH)" />
+                                 <String fx:value="Hong Kong Dollar (HKD)" />
+                                 <String fx:value="New Zealand Dollar (NZD)" />
+                              </FXCollections>
+                           </items>
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="215.0" prefHeight="39.0" prefWidth="689.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="toConvertChoiceBox1" prefHeight="10.0" prefWidth="181.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="US Dollar (USD)" />
+                                 <String fx:value="Euro (EUR)" />
+                                 <String fx:value="Japanese Yen (JPY)" />
+                                 <String fx:value="Pound Sterling (GBP)" />
+                                 <String fx:value="Australian Dollar (AUD)" />
+                                 <String fx:value="Canadian Dollar (CAD)" />
+                                 <String fx:value="Swiss Franc (CHF)" />
+                                 <String fx:value="Chinese Renminbi (CNH)" />
+                                 <String fx:value="Hong Kong Dollar (HKD)" />
+                                 <String fx:value="New Zealand Dollar (NZD)" />
+                              </FXCollections>
+                           </items>
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="15.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="312.0" prefHeight="134.0" prefWidth="600.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#convertValue" prefHeight="38.0" prefWidth="134.0" text="Convert" textFill="#006779">
+                           <HBox.margin>
+                              <Insets left="70.0" top="28.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="17.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
                </children>
-                             
-	</HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label prefHeight="19.0" prefWidth="239.0" text="Select the currency you want to convert" textFill="#514f4f">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <ChoiceBox prefWidth="150.0" />
-            	<items>
-                	<FXCollections fx:factory="observableArrayList">
-                    	<String fx:value="US Dollar (USD)" />
-                        <String fx:value="Euro (EUR)" />
-                        <String fx:value="Japanese Yen (JPY)" />
-                        <String fx:value="Pound Sterling (GBP)" />
-                        <String fx:value="Australian Dollar (AUD)" />
-                        <String fx:value="Canadian Dollar (CAD)" />
-                        <String fx:value="Swiss Franc (CHF)" />
-                        <String fx:value="Chinese Renminbi (CNH)" />
-                        <String fx:value="Hong Kong Dollar (HKD)" />
-                        <String fx:value="New Zealand Dollar (NZD)" />
-                     </FXCollections>
-                </items>
-            
-         </children>
-      </HBox>
-    </children>
-    </VBox>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="80.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+         </top>
+         <left>
+            <Pane prefHeight="470.0" prefWidth="98.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="470.0" prefWidth="13.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="TESTLabel1" layoutX="103.0" layoutY="-17.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                     <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TESTLabel2" layoutX="103.0" layoutY="36.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                     <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TESTLabel" layoutX="103.0" layoutY="25.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                     <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>
