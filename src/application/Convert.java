@@ -12,7 +12,7 @@ public class Convert extends Rates {
 		this.toConvert = toConvert;
 	}
 
-	public double getConverted() {
+	public double getConverted() throws InvalidCurrencyException {
 		return Calculate();
 	}
 	
@@ -20,20 +20,28 @@ public class Convert extends Rates {
 		super(oldCurrency, newCurrency);
 		try {
 			toConvert = Double.parseDouble(valueToConvert);
+			if (toConvert < 0) {
+				toConvert = 0;
+				throw new InvalidCurrencyException("Please use a positive value.");
+			}
 		}catch (NumberFormatException nfe) {
 			throw new InvalidCurrencyException("Do not include characters: '" + valueToConvert 
 					+ "'. Value to convert should be a number");
 		}
 	}
 	
-	private Double Calculate() {
+	private Double Calculate() throws InvalidCurrencyException {
 		return (toConvert * this.getRate());
 	}
 	
 	@Override
 	public String toString() {
-		return " Converted:           " + getToConvert() + " " + this.getFromCurrency() +
-				"      =      " + getConverted() + " " + this.getToCurrency();
+		try {
+			return " Converted:           " + getToConvert() + " " + this.getFromCurrency() +
+					"      =      " + getConverted() + " " + this.getToCurrency();
+		} catch (InvalidCurrencyException e) {
+			return e.getMessage();
+		}
 	}
 
 }
