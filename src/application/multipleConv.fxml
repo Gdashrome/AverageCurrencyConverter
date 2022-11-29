@@ -93,10 +93,10 @@
                               
                         <Label fx:id="amountErrorLabel" prefHeight="31.0" prefWidth="590.0" text="" textFill="RED">
                            <padding>
-                              <Insets left="10.0" right="10.0" top="10.0" />
+                              <Insets left="10.0" right="10.0" />
                            </padding>
                            <HBox.margin>
-                              <Insets />
+                              <Insets bottom="5.0" top="5.0" />
                            </HBox.margin>
                            <font>
                               <Font name="Georgia" size="11.0" />
@@ -104,14 +104,26 @@
                         </Label>
                      </children>
                   </HBox>
+                  <HBox layoutX="10.0" layoutY="191.0" prefHeight="5.0" prefWidth="689.0">
+                     <children>
+                        <Label text="Convert Up to 3 Currencies!">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <HBox prefHeight="39.0" prefWidth="689.0">
                      <children>
-                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#024379">
                            <HBox.margin>
-                              <Insets bottom="5.0" top="25.0" />
+                              <Insets bottom="5.0" top="20.0" />
                            </HBox.margin>
                            <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              <Insets bottom="18.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <font>
                               <Font name="System Bold Italic" size="16.0" />
@@ -136,10 +148,14 @@
                         		</FXCollections>
                         	</items>
                            <padding>
-                              <Insets left="10.0" right="10.0" top="10.0" />
+                              <Insets left="10.0" right="10.0" top="12.0" />
                            </padding>
                         </ChoiceBox>
-                        <Label layoutX="10.0" layoutY="35.0" prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="191.0" prefHeight="5.0" prefWidth="689.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="130.0" text="Convert to:" textFill="#006685">
                            <font>
                               <Font name="System Bold Italic" size="16.0" />
                            </font>
@@ -147,7 +163,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <ChoiceBox fx:id="toConvertChoiceBox2" layoutX="140.0" layoutY="30.0" prefHeight="10.0" prefWidth="181.0">
+                        <ChoiceBox fx:id="toConvertChoiceBox2" prefHeight="41.0" prefWidth="182.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="US Dollar (USD)" />
@@ -163,14 +179,14 @@
                               </FXCollections>
                            </items>
                            <padding>
-                              <Insets left="10.0" right="10.0" top="10.0" />
+                              <Insets left="10.0" right="10.0" top="12.0" />
                            </padding>
                         </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="215.0" prefHeight="39.0" prefWidth="689.0">
                      <children>
-                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#870000">
+                        <Label prefHeight="45.0" prefWidth="115.0" text="Convert to:" textFill="#007c85">
                            <font>
                               <Font name="System Bold Italic" size="16.0" />
                            </font>
@@ -178,10 +194,10 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <HBox.margin>
-                              <Insets bottom="5.0" top="25.0" />
+                              <Insets bottom="5.0" top="16.0" />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="toConvertChoiceBox1" prefHeight="10.0" prefWidth="181.0">
+                        <ChoiceBox fx:id="toConvertChoiceBox1" prefHeight="41.0" prefWidth="183.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="US Dollar (USD)" />
@@ -197,19 +213,19 @@
                               </FXCollections>
                            </items>
                            <padding>
-                              <Insets left="10.0" right="10.0" top="10.0" />
+                              <Insets left="10.0" right="10.0" top="12.0" />
                            </padding>
                            <HBox.margin>
-                              <Insets left="15.0" right="10.0" top="20.0" />
+                              <Insets left="15.0" right="10.0" top="18.0" />
                            </HBox.margin>
                         </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="312.0" prefHeight="134.0" prefWidth="600.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#convertValue" prefHeight="38.0" prefWidth="134.0" text="Convert" textFill="#006779">
+                        <Button mnemonicParsing="false" onAction="#convertValue" prefHeight="38.0" prefWidth="144.0" text="Convert" textFill="#a80800">
                            <HBox.margin>
-                              <Insets left="70.0" top="28.0" />
+                              <Insets left="168.0" top="28.0" />
                            </HBox.margin>
                            <font>
                               <Font name="System Bold Italic" size="17.0" />
@@ -220,7 +236,7 @@
             </VBox>
          </center>
          <top>
-            <Pane prefHeight="80.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="48.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
          </top>
          <left>
             <Pane prefHeight="470.0" prefWidth="98.0" BorderPane.alignment="CENTER" />
@@ -231,20 +247,29 @@
          <bottom>
             <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="TESTLabel1" layoutX="103.0" layoutY="-17.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                  <Label fx:id="TESTLabel" layoutX="103.0" layoutY="24.0" prefHeight="45.0" prefWidth="579.0" text="" textFill="#024379">
                      <font>
-                        <Font name="System Bold Italic" size="23.0" />
+                        <Font name="System Bold Italic" size="20.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="22.0" top="15.0" />
+                     </padding>
                   </Label>
-                  <Label fx:id="TESTLabel2" layoutX="103.0" layoutY="36.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                  <Label fx:id="TESTLabel1" layoutX="103.0" layoutY="95.0" prefHeight="24.0" prefWidth="579.0" text="" textFill="#007c85">
                      <font>
-                        <Font name="System Bold Italic" size="23.0" />
+                        <Font name="System Bold Italic" size="20.0" />
                      </font>
+                     <padding>
+                        <Insets top="6.0" />
+                     </padding>
                   </Label>
-                  <Label fx:id="TESTLabel" layoutX="103.0" layoutY="25.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                  <Label fx:id="TESTLabel2" layoutX="103.0" layoutY="49.0" prefHeight="53.0" prefWidth="579.0" text="" textFill="#006685">
                      <font>
-                        <Font name="System Bold Italic" size="23.0" />
+                        <Font name="System Bold Italic" size="20.0" />
                      </font>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
                   </Label>
                </children></Pane>
          </bottom>
