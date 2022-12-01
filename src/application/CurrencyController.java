@@ -31,7 +31,7 @@ public class CurrencyController {
 	private Label amountErrorLabel;
 	
 	@FXML
-	private Label TESTLabel;
+	private Label resultLabel;
 	
 	@FXML
 	private TextField amountTextField;
@@ -45,61 +45,12 @@ public class CurrencyController {
 		try {
 			Convert money = new Convert(amountTextField.getText(),fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
 			System.out.println(money.getRate());
-			TESTLabel.setText(money.toString());
+			resultLabel.setText(money.toString());
 		} catch (InvalidCurrencyException e) {
 			amountErrorLabel.setText(e.getMessage());
-			Convert money = new Convert("0", fromConvertChoiceBox.getValue(), toConvertChoiceBox.getValue());
-			TESTLabel.setText(money.toString());
 		}
 	}
 	
-	//void printRandomFunFact(Scene mainScene, );
-		
-	/*@FXML
-    void funFact (ActionEvent getFunFacts){
-    	//creates access to the main scene
-    	Scene mainScene = applicationStage.getScene();
-    	
-    	//Sets new window
-		VBox funFacts = new VBox();
-		Scene scene = new Scene(funFacts,300,400);
-		funFacts.setAlignment(Pos.CENTER);
-		applicationStage.setScene(scene);
-		applicationStage.setTitle("Fun Facts");
-		applicationStage.show();
-		
-		//Title and names
-		Label currencyFunFact = new Label ("Currencies Fun Facts");
-		currencyFunFact.setStyle("-fx-font-weight: bold");
-    	funFacts.getChildren().add(currencyFunFact);
-    	Label blankSpace = new Label ("");
-    	funFacts.getChildren().add(blankSpace);
-    	
-    	// Contains Label and ChoiceBox
-    	HBox chooseCurrency = new HBox(); 
-    	chooseCurrency.setPadding(new Insets (1,1,1,1));
-    	chooseCurrency.setAlignment(Pos.CENTER);
-    	
-    	Label chooseLabel = new Label ("Press to get a random fun fact: ");
-    	chooseCurrency.getChildren().add(chooseLabel);
-    	funFacts.getChildren().add(chooseCurrency);
-    	
-    	
-    	
-    	
-    	
-    	
-    	Button funButton = new Button ("Fun Fact");
-    	funFacts.getChildren().add(funButton);
-    	Label blankSpace2 = new Label ("");
-    	funFacts.getChildren().add(blankSpace2);
-    	
-    	Button doneButton = new Button ("Done");
-    	//doneButton.setOnAction(finishEvent -> funFact(mainScene, funFacts));
-    	funFacts.getChildren().add(doneButton);
-
-		
-	}*/
 	@FXML
 	private void funFact (ActionEvent funF) throws IOException {
 		

@@ -22,7 +22,7 @@ public class Rates{
 			fromCurrency = new String(oldCurrency.substring(oldCurrency.indexOf('(') + 1, oldCurrency.indexOf(')')));
 			toCurrency = new String(newCurrency.substring(newCurrency.indexOf('(') + 1, newCurrency.indexOf(')')));
 		}catch (NullPointerException npe) {
-			throw new InvalidCurrencyException("Please put a new currency to convert the given value to");
+			throw new InvalidCurrencyException("Please select a currency.");
 		}
 	}
 	

@@ -37,8 +37,7 @@ public class Convert extends Rates {
 	@Override
 	public String toString() {
 		try {
-			return " Converted:           " + getToConvert() + " " + this.getFromCurrency() +
-					"      =      " + getConverted() + " " + this.getToCurrency();
+			return String.format(" Converted:           %.2f  %s      =      %.2f  %s",getToConvert(), this.getFromCurrency(), getConverted(), this.getToCurrency() );
 		} catch (InvalidCurrencyException e) {
 			return e.getMessage();
 		}
