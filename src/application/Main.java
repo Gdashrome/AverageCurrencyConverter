@@ -18,7 +18,7 @@ public class Main extends Application {
 			CurrencyController controller = (CurrencyController)loader.getController();
 			controller.applicationStage = primaryStage;
 		
-			Scene scene = new Scene(root,1280,720);
+			Scene scene = new Scene(root,1000,750);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Currency Converter");

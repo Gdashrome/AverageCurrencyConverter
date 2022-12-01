@@ -55,7 +55,7 @@ public class CurrencyController {
 	
 	//void printRandomFunFact(Scene mainScene, );
 		
-	@FXML
+	/*@FXML
     void funFact (ActionEvent getFunFacts){
     	//creates access to the main scene
     	Scene mainScene = applicationStage.getScene();
@@ -99,7 +99,23 @@ public class CurrencyController {
     	funFacts.getChildren().add(doneButton);
 
 		
+	}*/
+	@FXML
+	private void funFact (ActionEvent funF) throws IOException {
+		
+		//load the multiple convert scene
+		FXMLLoader loader = new FXMLLoader (getClass().getResource("funFacts.fxml"));
+		Parent root = loader.load();
+		
+		
+		
+		
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.setTitle("Fun Facts");
+		stage.show();
 	}
+	
 	
 	
 	@FXML

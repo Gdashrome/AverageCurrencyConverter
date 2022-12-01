@@ -9,50 +9,37 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-      <VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.CurrencyController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FunFactsController">
          <children>
-            <HBox prefHeight="68.0" prefWidth="400.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="112.0" text="Fun Facts" textAlignment="JUSTIFY">
-                     <font>
-                        <Font name="System Bold" size="19.0" />
-                     </font>
-                     <effect>
-                        <Blend />
-                     </effect>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <Label prefHeight="20.0" prefWidth="290.0" text="Press to generate a fun fact from our currencies">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="174.0" text="Fun Facts" textAlignment="JUSTIFY" textFill="#000a4a">
                <font>
-                  <Font name="System Italic" size="14.0" />
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label prefHeight="24.0" prefWidth="422.0" text="Press to generate a fun fact from our currencies" textFill="#002659">
+               <font>
+                  <Font name="Georgia" size="20.0" />
                </font>
             </Label>
             <Label />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="71.0" text="Press" textFill="#4dcd41" />
+            <Button fx:id="getFact" mnemonicParsing="false" onAction="#getFact" prefHeight="27.0" prefWidth="71.0" text="Press" textFill="#4dcd41" />
+      <Label />
+      <Label fx:id="factLabel" text="" textFill="#007c85">
+      <font>
+          <Font name="System Bold Italic" size="15.0" />
+      </font>
+      </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
          </children>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#e1dfdf" />
-               </light>
-            </Lighting>
-         </effect>
+         
       </VBox>
-   
-
