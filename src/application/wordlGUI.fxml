@@ -183,7 +183,7 @@
          <bottom>
             <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="TESTLabel" layoutX="103.0" layoutY="-53.0" prefHeight="62.0" prefWidth="579.0" text="" textFill="#8a0000">
+                  <Label fx:id="resultLabel" layoutX="103.0" layoutY="-53.0" prefHeight="62.0" prefWidth="800.0" text="" textFill="#8a0000">
                      <font>
                         <Font name="System Bold Italic" size="23.0" />
                      </font></Label>

@@ -29,13 +29,13 @@ public class MultiCurrencyController {
 	private Label amountErrorLabel;
 	
 	@FXML
-	private Label TESTLabel;
+	private Label resultLabel;
 	
 	@FXML
-	private Label TESTLabel1;
+	private Label resultLabel2;
 	
 	@FXML
-	private Label TESTLabel2;
+	private Label resultLabel3;
 	
 	@FXML
 	public void passCurrencyAmount(String money) throws InvalidCurrencyException {
@@ -64,26 +64,26 @@ public class MultiCurrencyController {
 			if (toConvertChoiceBox.getValue() != null) {
 				Convert money = new Convert(amountTextField.getText(),fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
 				System.out.println(money.getRate());
-				TESTLabel.setText(money.toString());
+				resultLabel.setText(money.toString());
 			}
 			if (toConvertChoiceBox1.getValue() != null) {
 				Convert money1 = new Convert(amountTextField.getText(),fromConvertChoiceBox.getValue(),toConvertChoiceBox1.getValue());
 				System.out.println(money1.getRate());
-				TESTLabel1.setText(money1.toString());
+				resultLabel2.setText(money1.toString());
 			}
 			if (toConvertChoiceBox2.getValue() != null) {
 				Convert money2 = new Convert(amountTextField.getText(),fromConvertChoiceBox.getValue(),toConvertChoiceBox2.getValue());
 				System.out.println(money2.getRate());
-				TESTLabel2.setText(money2.toString());
+				resultLabel3.setText(money2.toString());
 			}
 		} catch (InvalidCurrencyException e) {
 			amountErrorLabel.setText(e.getMessage());
 			Convert money = new Convert("0", fromConvertChoiceBox.getValue(), toConvertChoiceBox.getValue());
-			TESTLabel.setText(money.toString());
+			//resultLabel.setText(money.toString());
 			Convert money1 = new Convert("0", fromConvertChoiceBox.getValue(), toConvertChoiceBox1.getValue());
-			TESTLabel.setText(money1.toString());
+			//resultLabel2.setText(money1.toString());
 			Convert money2 = new Convert("0", fromConvertChoiceBox.getValue(), toConvertChoiceBox2.getValue());
-			TESTLabel.setText(money2.toString());
+			//resultLabel3.setText(money2.toString());
 		}
 	}
 }

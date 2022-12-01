@@ -247,7 +247,7 @@
          <bottom>
             <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="TESTLabel" layoutX="103.0" layoutY="24.0" prefHeight="45.0" prefWidth="579.0" text="" textFill="#024379">
+                  <Label fx:id="resultLabel" layoutX="103.0" layoutY="24.0" prefHeight="45.0" prefWidth="579.0" text="" textFill="#024379">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
@@ -255,7 +255,7 @@
                         <Insets bottom="22.0" top="15.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="TESTLabel1" layoutX="103.0" layoutY="95.0" prefHeight="24.0" prefWidth="579.0" text="" textFill="#007c85">
+                  <Label fx:id="resultLabel2" layoutX="103.0" layoutY="95.0" prefHeight="24.0" prefWidth="579.0" text="" textFill="#007c85">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
@@ -263,7 +263,7 @@
                         <Insets top="6.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="TESTLabel2" layoutX="103.0" layoutY="49.0" prefHeight="53.0" prefWidth="579.0" text="" textFill="#006685">
+                  <Label fx:id="resultLabel3" layoutX="103.0" layoutY="49.0" prefHeight="53.0" prefWidth="579.0" text="" textFill="#006685">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
