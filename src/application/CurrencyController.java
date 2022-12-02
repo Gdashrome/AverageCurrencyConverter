@@ -43,9 +43,11 @@ public class CurrencyController {
 		amountErrorLabel.setText("");
 		
 		try {
-			Convert money = new Convert(amountTextField.getText(),fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
-			System.out.println(money.getRate());
-			resultLabel.setText(money.toString());
+			Rates selectRates = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
+			Conversion money = new Conversion(amountTextField.getText(),selectRates.getRate());
+			DisplayResult result = new DisplayResult(money.getToConvert(), money.getConverted(), selectRates.getFromCurrency(), selectRates.getToCurrency());
+			System.out.println(selectRates.getRate());
+			resultLabel.setText(result.toString());
 		} catch (InvalidCurrencyException e) {
 			amountErrorLabel.setText(e.getMessage());
 		}
@@ -55,7 +57,7 @@ public class CurrencyController {
 	private void funFact (ActionEvent funF) throws IOException {
 		
 		//load the multiple convert scene
-		FXMLLoader loader = new FXMLLoader (getClass().getResource("funFacts.fxml"));
+		FXMLLoader loader = new FXMLLoader (getClass().getResource("FunFactsGUI.fxml"));
 		Parent root = loader.load();
 		
 		
@@ -73,7 +75,7 @@ public class CurrencyController {
     private void multipleConverts (ActionEvent multipleC) throws InvalidCurrencyException, IOException {
 		
 		//load the multiple convert scene
-		FXMLLoader loader = new FXMLLoader (getClass().getResource("multipleConv.fxml"));
+		FXMLLoader loader = new FXMLLoader (getClass().getResource("MultipleConversionGUI.fxml"));
 		Parent root = loader.load();
 		
 		MultiCurrencyController multiSceneController = loader.getController();
