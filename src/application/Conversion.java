@@ -1,8 +1,9 @@
 package application;
 
-public class Convert extends Rates {
+public class Conversion{
 	
 	private double toConvert;
+	private double rate;
 	
 	public double getToConvert() {
 		return toConvert;
@@ -11,14 +12,18 @@ public class Convert extends Rates {
 	public void setToConvert(double toConvert) {
 		this.toConvert = toConvert;
 	}
+	
+	public double getRate() {
+		return rate;
+	}
 
 	public double getConverted() throws InvalidCurrencyException {
-		return Calculate();
+		return (toConvert * rate);
 	}
 	
-	public Convert(String valueToConvert, String oldCurrency, String newCurrency) throws InvalidCurrencyException {
-		super(oldCurrency, newCurrency);
+	public Conversion(String valueToConvert, double newRate) throws InvalidCurrencyException {
 		try {
+			rate = newRate;
 			toConvert = Double.parseDouble(valueToConvert);
 			if (toConvert < 0) {
 				toConvert = 0;
@@ -29,18 +34,4 @@ public class Convert extends Rates {
 					+ "'. Value to convert should be a number");
 		}
 	}
-	
-	private Double Calculate() throws InvalidCurrencyException {
-		return (toConvert * this.getRate());
-	}
-	
-	@Override
-	public String toString() {
-		try {
-			return String.format(" Converted:           %.2f  %s      =      %.2f  %s",getToConvert(), this.getFromCurrency(), getConverted(), this.getToCurrency() );
-		} catch (InvalidCurrencyException e) {
-			return e.getMessage();
-		}
-	}
-
 }

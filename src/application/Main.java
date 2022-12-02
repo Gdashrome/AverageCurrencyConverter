@@ -14,7 +14,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			VBox root = loader.load(new FileInputStream("src/application/wordlGUI.fxml"));
+			VBox root = loader.load(new FileInputStream("src/application/MainConversionGUI.fxml"));
 			CurrencyController controller = (CurrencyController)loader.getController();
 			controller.applicationStage = primaryStage;
 		
