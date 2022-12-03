@@ -43,9 +43,10 @@ public class CurrencyController {
 		amountErrorLabel.setText("");
 		
 		try {
-			Rates selectRates = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
-			Conversion money = new Conversion(amountTextField.getText(),selectRates.getRate());
-			DisplayResult result = new DisplayResult(money.getToConvert(), money.getConverted(), selectRates.getFromCurrency(), selectRates.getToCurrency());
+			Currency money = new Currency(amountTextField.getText(), fromConvertChoiceBox.getValue());
+			Rates selectRates = new Rates(money,toConvertChoiceBox.getValue());
+			//Conversion money = new Conversion(amountTextField.getText(),selectRates.getRate());
+			DisplayResult result = new DisplayResult(money.getAmount(),selectRates.getConverted(), money.getCountryCurrency(), selectRates.getToCurrency());
 			System.out.println(selectRates.getRate());
 			resultLabel.setText(result.toString());
 		} catch (InvalidCurrencyException e) {

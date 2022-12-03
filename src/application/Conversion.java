@@ -25,10 +25,7 @@ public class Conversion{
 		try {
 			rate = newRate;
 			toConvert = Double.parseDouble(valueToConvert);
-			if (toConvert < 0) {
-				toConvert = 0;
-				throw new InvalidCurrencyException("Please use a positive value.");
-			}
+			
 		}catch (NumberFormatException nfe) {
 			throw new InvalidCurrencyException("Do not include characters: '" + valueToConvert 
 					+ "'. Value to convert should be a number");
