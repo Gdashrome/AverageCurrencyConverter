@@ -59,7 +59,7 @@ public class MultiCurrencyController {
 	void convertValue(ActionEvent event) throws InvalidCurrencyException {
 		
 		amountErrorLabel.setText("");
-		
+		/**
 		try {
 			if (toConvertChoiceBox.getValue() != null) {
 				Rates selectRates = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
@@ -88,6 +88,6 @@ public class MultiCurrencyController {
 			}
 		} catch (InvalidCurrencyException e) {
 			amountErrorLabel.setText(e.getMessage());
-		}
+		}*/
 	}
 }

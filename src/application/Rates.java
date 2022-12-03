@@ -1,36 +1,56 @@
 package application;
 
+/**
+ * Picks the exchange rate according to the currencies chosen.
+ * 
+ * @author gerom
+ *
+ */
 public class Rates{
-	
-	private String fromCurrency;
+	// attribute/data
+	private Currency money;
 	private String toCurrency;
+	private double rate;
 	
-	public double getRate() {
-		return chooseRate();
-	}
-	
-	public String getFromCurrency() {
-		return fromCurrency;
-	}
-
+	/**
+	 * Get the Currency to convert to.
+	 * 
+	 * @return returns a string of the final Currency to convert to.
+	 */
 	public String getToCurrency() {
 		return toCurrency;
 	}
+
+	public double getRate() {
+		return rate;
+	}
+
+	public double getConverted() throws InvalidCurrencyException {
+		chooseRate();
+		return (money.getAmount() * rate);
+	}
 	
-	public Rates(String oldCurrency, String newCurrency) throws InvalidCurrencyException {
+	/**
+	 * Initiates initial currency and currency to convert to.
+	 * @param oldCurrency string of the currency received from the choicebox
+	 * @param newCurrency string of the currency received from the choicebox
+	 * @throws InvalidCurrencyException
+	 */
+	public Rates(Currency newMoney, String newCurrency) throws InvalidCurrencyException {
 		try {
-			fromCurrency = new String(oldCurrency.substring(oldCurrency.indexOf('(') + 1, oldCurrency.indexOf(')')));
+			money = new Currency(newMoney);
 			toCurrency = new String(newCurrency.substring(newCurrency.indexOf('(') + 1, newCurrency.indexOf(')')));
 		}catch (NullPointerException npe) {
 			throw new InvalidCurrencyException("Please select a currency.");
 		}
 	}
-	
+	/**
+	 * Chooses the rate based on the initial currency and the currency to convert to.
+	 * @return returns the value of the exchange rate chosen.
+	 */
 	double chooseRate() {
 		
-		double rate = 0;
-		
-		if (getFromCurrency().equals("GBP")) {
+		if (money.getCountryCurrency().equals("GBP")) {
 			if (getToCurrency().equals("EUR")) {
 				rate = 1.1761;
 			}
@@ -61,7 +81,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("EUR")) {
+		else if (money.getCountryCurrency().equals("EUR")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.8505;
 			}
@@ -92,7 +112,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("CHF")) {
+		else if (money.getCountryCurrency().equals("CHF")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.8451;
 			}
@@ -123,7 +143,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("USD")) {
+		else if (money.getCountryCurrency().equals("USD")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.8094;
 			}
@@ -154,7 +174,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("CAD")) {
+		else if (money.getCountryCurrency().equals("CAD")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.6248;
 			}
@@ -186,7 +206,7 @@ public class Rates{
 
 		}
 		
-		else if (getFromCurrency().equals("AUD")) {
+		else if (money.getCountryCurrency().equals("AUD")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.5634;
 			}
@@ -217,7 +237,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("NZD")) {
+		else if (money.getCountryCurrency().equals("NZD")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.5135;
 			}
@@ -248,7 +268,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("CNH")) {
+		else if (money.getCountryCurrency().equals("CNH")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.1208;
 			}
@@ -279,7 +299,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("HKD")) {
+		else if (money.getCountryCurrency().equals("HKD")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.1033;
 			}
@@ -310,7 +330,7 @@ public class Rates{
 			else rate = 1;
 		}
 		
-		else if (getFromCurrency().equals("JPY")) {
+		else if (money.getCountryCurrency().equals("JPY")) {
 			if (getToCurrency().equals("GBP")) {
 				rate = 0.0062;
 			}
