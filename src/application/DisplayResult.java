@@ -4,14 +4,21 @@
 package application;
 
 /**
- * @author
+ * Displays the Currency of the user and the converted currency
+ * 
+ * @author gerome,maria,hugo
  *
  */
 public class DisplayResult {
+	
 	private double toConvertNumber;
 	private double ConvertedNumber;
 	private String fromCurrency;
 	private String toCurrency;
+	
+	public DisplayResult() {
+		
+	}
 	
 	public DisplayResult(double toConvert, double converted, String from, String to) throws InvalidCurrencyException{
 		toConvertNumber = toConvert;

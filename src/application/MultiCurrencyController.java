@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MultiCurrencyController {
-	
+
 	@FXML
 	private TextField amountTextField;
 	
@@ -37,6 +38,12 @@ public class MultiCurrencyController {
 	@FXML
 	private Label resultLabel3;
 	
+	/**
+	 * Receives amount of currency and sets the textbox for this GUI
+	 * Transferring data between GUIs
+	 * @param money
+	 * @throws InvalidCurrencyException
+	 */
 	@FXML
 	public void passCurrencyAmount(String money) throws InvalidCurrencyException {
 		try {
@@ -45,7 +52,12 @@ public class MultiCurrencyController {
 			throw new InvalidCurrencyException("Please put a valid value in the text field.");
 		}
 	}
-	
+	/**
+	 * Receives type of currency and sets the ChoiceBox for this GUI
+	 * Transferring data between GUIs
+	 * @param currency
+	 * @throws InvalidCurrencyException
+	 */
 	@FXML
 	public void passCurrency(String currency) throws InvalidCurrencyException {
 		try {
@@ -54,40 +66,62 @@ public class MultiCurrencyController {
 			throw new InvalidCurrencyException("Please put a valid value in the text field.");
 		}
 	}
-	
+	/**
+	 * Executes when the Convert button on MultipleConversionGUI is pressed.
+	 * @param event
+	 * @throws InvalidCurrencyException
+	 */
 	@FXML
 	void convertValue(ActionEvent event) throws InvalidCurrencyException {
 		
 		amountErrorLabel.setText("");
-		/**
+		
 		try {
+			
+			MultipleCurrencies list = new MultipleCurrencies();
+			
 			if (toConvertChoiceBox.getValue() != null) {
-				Rates selectRates = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox.getValue());
-				Conversion money = new Conversion(amountTextField.getText(),selectRates.getRate());
-				DisplayResult result = new DisplayResult(money.getToConvert(), money.getConverted(), selectRates.getFromCurrency(), selectRates.getToCurrency());
-				System.out.println(selectRates.getRate());
-				resultLabel.setText(result.toString());
+				//create a new money with amount and currency type
+				Currency money = new Currency(amountTextField.getText(), fromConvertChoiceBox.getValue());
+				//add to the multicurrency object
+				list.add(money, toConvertChoiceBox.getValue());
+				
 			}
 			if (toConvertChoiceBox1.getValue() != null) {
-				Rates selectRates1 = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox1.getValue());
-				Conversion money1 = new Conversion(amountTextField.getText(),selectRates1.getRate());
-				DisplayResult result1 = new DisplayResult(money1.getToConvert(), money1.getConverted(), selectRates1.getFromCurrency(), selectRates1.getToCurrency());
-				System.out.println(selectRates1.getRate());
-				resultLabel2.setText(result1.toString());
+				//create a new money with amount and currency type
+				Currency money1 = new Currency(amountTextField.getText(), fromConvertChoiceBox.getValue());
+				//add to the multicurrency object
+				list.add(money1, toConvertChoiceBox1.getValue());
 			}
 			if (toConvertChoiceBox2.getValue() != null) {
-				Rates selectRates2 = new Rates(fromConvertChoiceBox.getValue(),toConvertChoiceBox2.getValue());
-				Conversion money2 = new Conversion(amountTextField.getText(),selectRates2.getRate());
-				DisplayResult result2 = new DisplayResult(money2.getToConvert(), money2.getConverted(), selectRates2.getFromCurrency(), selectRates2.getToCurrency());
-				System.out.println(selectRates2.getRate());
-				resultLabel3.setText(result2.toString());
+				//create a new money with amount and currency type
+				Currency money2 = new Currency(amountTextField.getText(), fromConvertChoiceBox.getValue());
+				//add to the multicurrency object
+				list.add(money2, toConvertChoiceBox2.getValue());
 			}
+			
 			if (toConvertChoiceBox.getValue() == null && toConvertChoiceBox1.getValue() == null
 					&& toConvertChoiceBox2.getValue() == null) {
 				throw new InvalidCurrencyException("Please select a currency.");
 			}
+			
+			ArrayList<String> temp = new ArrayList<String>();
+			temp = new ArrayList<String>(list.getResultList());
+			if (temp.size() == 1) {
+				resultLabel.setText(temp.get(0));
+			}
+			else if (temp.size() == 2) {
+				resultLabel.setText(temp.get(0));
+				resultLabel3.setText(temp.get(1));
+			}
+			else if (temp.size() == 3) {
+				resultLabel.setText(temp.get(0));
+				resultLabel3.setText(temp.get(1));
+				resultLabel2.setText(temp.get(2));
+			}
+			
 		} catch (InvalidCurrencyException e) {
 			amountErrorLabel.setText(e.getMessage());
-		}*/
+		}
 	}
 }
