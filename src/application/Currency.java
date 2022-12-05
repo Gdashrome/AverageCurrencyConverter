@@ -1,18 +1,36 @@
 package application;
-
+/**
+ * This class handles the money that the user wants to convert.
+ * It needs the amount and the type of the currency the user wants to convert.
+ * 
+ * @author gerome,maria,hugo
+ *
+ */
 public class Currency {
 	
 	private double amount;
 	private String countryCurrency;
-	
+	/**
+	 * Returns the amount of money for this Currency object.
+	 * @return returns a double value of the amount.
+	 */
 	public double getAmount() {
 		return amount;
 	}
-
+	/**
+	 * Returns the type of Currency.
+	 * @return returns a String.
+	 */
 	public String getCountryCurrency() {
 		return countryCurrency;
 	}
 	
+	/**
+	 * Initiates the amount of money and the type of currency.
+	 * @param amountOfMoney is a string from the textfield.
+	 * @param currentCurrencyType is a string from the ChoiceBox
+	 * @throws InvalidCurrencyException
+	 */
 	public Currency(String amountOfMoney, String currentCurrencyType) throws InvalidCurrencyException {
 		try {
 			amount = Double.parseDouble(amountOfMoney);
@@ -28,6 +46,10 @@ public class Currency {
 		}
 	}
 	
+	/**
+	 * Copies the Currency's amount and type.
+	 * @param currencyToCopy is a Currency object.
+	 */
 	public Currency(Currency currencyToCopy) {
 		amount = currencyToCopy.amount;
 		countryCurrency = new String (currencyToCopy.getCountryCurrency());

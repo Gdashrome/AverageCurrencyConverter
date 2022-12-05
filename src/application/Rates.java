@@ -2,8 +2,9 @@ package application;
 
 /**
  * Picks the exchange rate according to the currencies chosen.
+ * Then calculates the Currency the user provided to a new type of money using that exchange rate.
  * 
- * @author gerom
+ * @author gerome,maria,hugo 
  *
  */
 public class Rates{
@@ -20,19 +21,26 @@ public class Rates{
 	public String getToCurrency() {
 		return toCurrency;
 	}
-
+	/**
+	 * Get the exchange rate based on the two currencies
+	 * @return returns the value of the exchange rate
+	 */
 	public double getRate() {
 		return rate;
 	}
-
+	/**
+	 * Get the value of the money converted to the new currency.
+	 * @return
+	 * @throws InvalidCurrencyException
+	 */
 	public double getConverted() throws InvalidCurrencyException {
 		chooseRate();
 		return (money.getAmount() * rate);
 	}
 	
 	/**
-	 * Initiates initial currency and currency to convert to.
-	 * @param oldCurrency string of the currency received from the choicebox
+	 * Initiates the money (amount and currency type) and currency to convert to.
+	 * @param newMoney is of type Currency
 	 * @param newCurrency string of the currency received from the choicebox
 	 * @throws InvalidCurrencyException
 	 */
@@ -48,7 +56,7 @@ public class Rates{
 	 * Chooses the rate based on the initial currency and the currency to convert to.
 	 * @return returns the value of the exchange rate chosen.
 	 */
-	double chooseRate() {
+	void chooseRate() {
 		
 		if (money.getCountryCurrency().equals("GBP")) {
 			if (getToCurrency().equals("EUR")) {
@@ -361,6 +369,5 @@ public class Rates{
 			else rate = 1;
 		}
 		else rate = 0.0;
-		return rate;
 	}
 }
